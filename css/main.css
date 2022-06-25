@@ -1,0 +1,93 @@
+:root {
+  --color-text: #1A1A1A;
+  --color-interaction: #EE685F;
+  --color-accent: #3D97B4;
+  --color-white: #FFFFFF;
+}
+
+.container {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #fff;
+}
+
+header {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+header nav {
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 16px;
+}
+header nav .logo {
+  flex-basis: 100%;
+}
+header nav .logo h1 {
+  font-weight: bold;
+  font-size: 32px;
+  color: var(--color-accent);
+}
+header nav .logo h1 span {
+  color: var(--color-interaction);
+}
+header .menu-icon {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  row-gap: 10px;
+  min-width: 32px;
+  height: 26px;
+}
+header .menu-icon span {
+  width: 32px;
+  height: 2px;
+  background-color: var(--color-text);
+  transition: 0.3s;
+}
+header .menu-icon[data-open=true] {
+  position: relative;
+}
+header .menu-icon[data-open=true] span {
+  width: 41.23px;
+  position: absolute;
+}
+header .menu-icon[data-open=true] span:first-of-type {
+  transform: rotate(39deg);
+}
+header .menu-icon[data-open=true] span:nth-of-type(2) {
+  width: 0;
+}
+header .menu-icon[data-open=true] span:last-of-type {
+  transform: rotate(-39deg);
+}
+header .menu {
+  display: none;
+}
+
+/*# sourceMappingURL=main.css.map */
