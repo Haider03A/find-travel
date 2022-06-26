@@ -36,6 +36,7 @@ header {
   width: 100%;
   display: flex;
   align-items: center;
+  position: relative;
 }
 header nav {
   flex-basis: 100%;
@@ -43,6 +44,37 @@ header nav {
   align-items: center;
   justify-content: center;
   column-gap: 16px;
+}
+header nav .menu-icon {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  row-gap: 10px;
+  min-width: 32px;
+  height: 26px;
+}
+header nav .menu-icon span {
+  width: 32px;
+  height: 2px;
+  background-color: var(--color-text);
+  transition: 0.3s;
+}
+header nav .menu-icon[data-open=true] {
+  position: relative;
+}
+header nav .menu-icon[data-open=true] span {
+  width: 41.23px;
+  position: absolute;
+}
+header nav .menu-icon[data-open=true] span:first-of-type {
+  transform: rotate(39deg);
+}
+header nav .menu-icon[data-open=true] span:nth-of-type(2) {
+  width: 0;
+}
+header nav .menu-icon[data-open=true] span:last-of-type {
+  transform: rotate(-39deg);
 }
 header nav .logo {
   flex-basis: 100%;
@@ -55,39 +87,67 @@ header nav .logo h1 {
 header nav .logo h1 span {
   color: var(--color-interaction);
 }
-header .menu-icon {
-  display: flex;
+header nav .menu {
+  display: none;
   flex-flow: column nowrap;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  row-gap: 10px;
-  min-width: 32px;
-  height: 26px;
-}
-header .menu-icon span {
-  width: 32px;
-  height: 2px;
-  background-color: var(--color-text);
+  position: absolute;
+  top: 70px;
+  left: 0;
+  height: calc(100vh - 70px);
+  width: 100%;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  row-gap: 40px;
+  opacity: 0;
   transition: 0.3s;
 }
-header .menu-icon[data-open=true] {
-  position: relative;
+header nav .menu .nav {
+  width: 100%;
 }
-header .menu-icon[data-open=true] span {
-  width: 41.23px;
-  position: absolute;
+header nav .menu .nav ul {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 32px;
 }
-header .menu-icon[data-open=true] span:first-of-type {
-  transform: rotate(39deg);
+header nav .menu .nav ul a {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  color: var(--color-text);
+  font-weight: 500;
 }
-header .menu-icon[data-open=true] span:nth-of-type(2) {
-  width: 0;
+header nav .menu .config {
+  width: 100%;
 }
-header .menu-icon[data-open=true] span:last-of-type {
-  transform: rotate(-39deg);
+header nav .menu .config ul {
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 32px;
 }
-header .menu {
-  display: none;
+header nav .menu .config ul a {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-interaction);
+  text-decoration: underline dotted;
+}
+header nav .menu .social {
+  flex-basis: 100%;
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+}
+header nav .menu .social ul {
+  display: flex;
+  column-gap: 16px;
+}
+header nav .menu .social ul img {
+  width: 32px;
+}
+header nav .menu[data-show=true] {
+  opacity: 1;
+  display: flex;
 }
 
 /*# sourceMappingURL=main.css.map */
