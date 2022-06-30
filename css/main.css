@@ -5,6 +5,14 @@
   --color-white: #FFFFFF;
 }
 
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .container {
   padding-left: 16px;
   padding-right: 16px;
@@ -18,14 +26,12 @@ li {
   list-style: none;
 }
 
-*,
-::after,
-::before {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+@keyframes translate-link {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
-
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #fff;
@@ -52,11 +58,11 @@ header nav .menu-icon {
   justify-content: center;
   row-gap: 10px;
   min-width: 32px;
-  height: 26px;
+  height: 29px;
 }
 header nav .menu-icon span {
   width: 32px;
-  height: 2px;
+  height: 3px;
   background-color: var(--color-text);
   transition: 0.3s;
 }
@@ -68,13 +74,13 @@ header nav .menu-icon[data-open=true] span {
   position: absolute;
 }
 header nav .menu-icon[data-open=true] span:first-of-type {
-  transform: rotate(39deg);
+  transform: rotate(45deg);
 }
 header nav .menu-icon[data-open=true] span:nth-of-type(2) {
   width: 0;
 }
 header nav .menu-icon[data-open=true] span:last-of-type {
-  transform: rotate(-39deg);
+  transform: rotate(-45deg);
 }
 header nav .logo {
   flex-basis: 100%;
@@ -88,20 +94,21 @@ header nav .logo h1 span {
   color: var(--color-interaction);
 }
 header nav .menu {
-  display: none;
+  display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   position: absolute;
   top: 70px;
-  left: 0;
+  left: -100%;
   height: calc(100vh - 70px);
   width: 100%;
   padding-top: 32px;
   padding-bottom: 32px;
   row-gap: 40px;
+}
+header nav .menu > section > ul li {
   opacity: 0;
-  transition: 0.3s;
 }
 header nav .menu .nav {
   width: 100%;
@@ -111,9 +118,11 @@ header nav .menu .nav ul {
   flex-flow: column nowrap;
   row-gap: 32px;
 }
-header nav .menu .nav ul a {
-  display: block;
-  width: 100%;
+header nav .menu .nav ul li {
+  transform: translateX(-100%);
+  width: fit-content;
+}
+header nav .menu .nav ul li a {
   font-size: 16px;
   color: var(--color-text);
   font-weight: 500;
@@ -126,7 +135,13 @@ header nav .menu .config ul {
   flex-flow: row nowrap;
   column-gap: 32px;
 }
-header nav .menu .config ul a {
+header nav .menu .config ul li:nth-of-type(1) {
+  transform: translateX(84px);
+}
+header nav .menu .config ul li:nth-of-type(2) {
+  transform: translateX(184px);
+}
+header nav .menu .config ul li a {
   font-size: 18px;
   font-weight: 600;
   color: var(--color-interaction);
@@ -135,19 +150,34 @@ header nav .menu .config ul a {
 header nav .menu .social {
   flex-basis: 100%;
   display: flex;
-  width: 100%;
+  width: 224px;
   align-items: flex-end;
 }
 header nav .menu .social ul {
   display: flex;
   column-gap: 16px;
 }
-header nav .menu .social ul img {
+header nav .menu .social ul li:nth-of-type(1) {
+  transform: translateX(224px);
+}
+header nav .menu .social ul li:nth-of-type(2) {
+  transform: translateX(208px);
+}
+header nav .menu .social ul li:nth-of-type(3) {
+  transform: translateX(192px);
+}
+header nav .menu .social ul li:nth-of-type(4) {
+  transform: translateX(176px);
+}
+header nav .menu .social ul li:nth-of-type(5) {
+  transform: translateX(160px);
+}
+header nav .menu .social ul li img {
   width: 32px;
 }
 header nav .menu[data-show=true] {
-  opacity: 1;
   display: flex;
+  left: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
