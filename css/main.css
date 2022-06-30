@@ -16,6 +16,7 @@
 .container {
   padding-left: 16px;
   padding-right: 16px;
+  margin: 0 auto;
 }
 
 a {
@@ -24,6 +25,59 @@ a {
 
 li {
   list-style: none;
+}
+
+button {
+  border: none;
+}
+
+.main-but {
+  background-color: var(--color-interaction);
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 15px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.menu-icon {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  row-gap: 10px;
+  min-width: 32px;
+  height: 29px;
+}
+.menu-icon span {
+  width: 32px;
+  height: 3px;
+  background-color: var(--color-text);
+  transition: 0.3s;
+}
+.menu-icon[data-open=true] {
+  position: relative;
+}
+.menu-icon[data-open=true] span {
+  width: 41.23px;
+  position: absolute;
+}
+.menu-icon[data-open=true] span:first-of-type {
+  transform: rotate(45deg);
+}
+.menu-icon[data-open=true] span:nth-of-type(2) {
+  width: 0;
+}
+.menu-icon[data-open=true] span:last-of-type {
+  transform: rotate(-45deg);
+}
+
+@-webkit-keyframes translate-link {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @keyframes translate-link {
@@ -49,38 +103,8 @@ header nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  column-gap: 16px;
-}
-header nav .menu-icon {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  row-gap: 10px;
-  min-width: 32px;
-  height: 29px;
-}
-header nav .menu-icon span {
-  width: 32px;
-  height: 3px;
-  background-color: var(--color-text);
-  transition: 0.3s;
-}
-header nav .menu-icon[data-open=true] {
-  position: relative;
-}
-header nav .menu-icon[data-open=true] span {
-  width: 41.23px;
-  position: absolute;
-}
-header nav .menu-icon[data-open=true] span:first-of-type {
-  transform: rotate(45deg);
-}
-header nav .menu-icon[data-open=true] span:nth-of-type(2) {
-  width: 0;
-}
-header nav .menu-icon[data-open=true] span:last-of-type {
-  transform: rotate(-45deg);
+  -moz-column-gap: 16px;
+       column-gap: 16px;
 }
 header nav .logo {
   flex-basis: 100%;
@@ -101,11 +125,14 @@ header nav .menu {
   position: absolute;
   top: 70px;
   left: -100%;
+  min-height: 540px;
   height: calc(100vh - 70px);
   width: 100%;
   padding-top: 32px;
   padding-bottom: 32px;
   row-gap: 40px;
+  background-color: var(--color-white);
+  z-index: 1000;
 }
 header nav .menu > section > ul li {
   opacity: 0;
@@ -120,6 +147,8 @@ header nav .menu .nav ul {
 }
 header nav .menu .nav ul li {
   transform: translateX(-100%);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 }
 header nav .menu .nav ul li a {
@@ -133,7 +162,8 @@ header nav .menu .config {
 header nav .menu .config ul {
   display: flex;
   flex-flow: row nowrap;
-  column-gap: 32px;
+  -moz-column-gap: 32px;
+       column-gap: 32px;
 }
 header nav .menu .config ul li:nth-of-type(1) {
   transform: translateX(84px);
@@ -145,7 +175,8 @@ header nav .menu .config ul li a {
   font-size: 18px;
   font-weight: 600;
   color: var(--color-interaction);
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
 }
 header nav .menu .social {
   flex-basis: 100%;
@@ -155,7 +186,8 @@ header nav .menu .social {
 }
 header nav .menu .social ul {
   display: flex;
-  column-gap: 16px;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
 }
 header nav .menu .social ul li:nth-of-type(1) {
   transform: translateX(224px);
@@ -180,4 +212,128 @@ header nav .menu[data-show=true] {
   left: 0;
 }
 
-/*# sourceMappingURL=main.css.map */
+main .banner {
+  background-image: url(../images/Banner.png);
+  background-repeat: no-repeat;
+  background-position: 60% center;
+  background-size: cover;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+main .banner h1 {
+  max-width: 185px;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color-text);
+}
+main .banner p {
+  margin-top: 16px;
+  font-size: 16px;
+  color: var(--color-text);
+  font-weight: 500;
+  max-width: 244px;
+}
+main .banner .flater-box {
+  padding: 15px 20px;
+  flex-basis: 100%;
+  height: 80px;
+}
+main .banner .flater-box h6 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-accent);
+}
+main .banner .flater-box h4,
+main .banner .flater-box div.controle {
+  font-weight: 500;
+  margin-top: 5px;
+}
+main .banner .flater-box h4 {
+  cursor: pointer;
+}
+main .banner .flater-box h4:hover {
+  color: var(--color-interaction);
+}
+main .banner .flater-box div.controle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .banner .flater-box div.controle .minus,
+main .banner .flater-box div.controle .plus {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--color-interaction);
+  cursor: pointer;
+}
+main .banner .flater-box div.controle .people-count {
+  color: var(--color-text);
+  font-size: 16px;
+  text-align: center;
+}
+main .banner .search {
+  margin-top: 24px;
+  background-color: var(--color-white);
+  display: flex;
+  border-radius: 15px;
+  overflow: hidden;
+}
+main .banner .search .settimg-config-icon {
+  background-color: var(--color-interaction);
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+  cursor: pointer;
+}
+main .banner .search .settimg-config-icon:hover {
+  background-color: var(--color-accent);
+}
+main .banner .search .settimg-config-icon img {
+  width: 40px;
+  height: 40px;
+}
+main .banner .menu-settimg-config {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  gap: 16px;
+  position: absolute;
+  top: 70px;
+  left: 100%;
+  min-height: 540px;
+  height: calc(100vh - 70px);
+  width: 100%;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  background-color: var(--color-white);
+  transition: 0.3s;
+}
+main .banner .menu-settimg-config .icon-close {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+main .banner .menu-settimg-config .flater-box {
+  border: 1px solid var(--color-interaction);
+  border-radius: 15px;
+}
+main .banner .menu-settimg-config .people-count,
+main .banner .menu-settimg-config .rooms-count {
+  flex-basis: calc(50% - 8px);
+}
+main .banner .menu-settimg-config .dates h4 {
+  display: flex;
+  justify-content: space-between;
+}
+main .banner .menu-settimg-config .find-tour {
+  width: 100%;
+  margin-top: 8px;
+  height: 50px;
+  padding: 0;
+}
+main .banner .menu-settimg-config[data-show=true] {
+  left: 0;
+}/*# sourceMappingURL=main.css.map */

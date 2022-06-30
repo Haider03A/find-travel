@@ -1,16 +1,17 @@
-const showAndHiddenEle = (eleForHidden, eleStatusCB) => {
+const showAndHiddenEle = (eleForHidden, eleStatusCB = false) => {
     const eleStatus = eleForHidden.dataset.show === 'true';
     eleForHidden.dataset.show = !eleStatus;
-    eleStatusCB(eleStatus)
+    eleStatusCB &&
+        eleStatusCB(eleStatus);
 };
 
-const menuIcon = document.querySelector("header > nav > .menu-icon");
+const menuIconHeader = document.querySelector("header > nav > .menu-icon");
 const menu = document.querySelector("header > nav > .menu");
 const menulinks = document.querySelectorAll(".menu .nav ul li");
 const menuConfig = document.querySelectorAll(".menu .config ul li");
 const menuSocial = document.querySelectorAll(".menu .social ul li");
 
-menuIcon.addEventListener('click', function () {
+menuIconHeader.addEventListener('click', function () {
     showAndHiddenEle(menu, status => {
         this.dataset.open = !status;
         const anim = eles => {
@@ -28,4 +29,17 @@ menuIcon.addEventListener('click', function () {
 
     });
 
+});
+
+
+const menuOpenSearch = document.querySelector(".search > button.settimg-config-icon");
+const menuIconSearch = document.querySelector(".menu-settimg-config .icon-close .menu-icon");
+const menuSearch = document.querySelector(".menu-settimg-config");
+
+menuOpenSearch.addEventListener('click', _ => {
+    showAndHiddenEle(menuSearch);
+});
+
+menuIconSearch.addEventListener('click', _ => {
+    showAndHiddenEle(menuSearch);
 });

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,12 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <title>Find Travel</title>
 </head>
+
 <body>
     <header>
         <nav class="container">
@@ -34,7 +38,7 @@
                         <li><a href="#">Contacts</a></li>
                     </ul>
                 </section>
-                
+
                 <section class="config">
                     <ul>
                         <li><a>$</a></li>
@@ -55,6 +59,73 @@
 
         </nav>
     </header>
+    <main>
+        <section class="banner container">
+            <h1>The best tours in just 3 clicks</h1>
+            <p>Enter a country, a city or even just a landmark and we'll find the right tours for you</p>
+            <div class="search">
+                <div class="location flater-box">
+                    <h6 class="country-city-landmark">
+                        <span>Country,</span><span> city,</span><span> landmark</span>
+                    </h6>
+                    <h4 class="country">Estonia</h4>
+                </div>
+                <button class="settimg-config-icon">
+                    <img src="./icons/akar-icons_gear.svg" alt="setting">
+                </button>
+            </div>
+
+            <div class="menu-settimg-config container">
+
+                <div class="icon-close">
+                    <div class="menu-icon" data-open="true">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+
+                <div class="location flater-box">
+                    <h6 class="country-city-landmark-text">
+                        <span>Country,</span><span> city,</span><span> landmark</span>
+                    </h6>
+                    <h4 class="country">Estonia</h4>
+                </div>
+
+                <div class="people-count flater-box">
+                    <h6 class="people-count-text">
+                        People
+                    </h6>
+                    <div class="controle">
+                        <span class="minus">-</span>
+                        <span class="people-count">2</span>
+                        <span class="plus">+</span>
+                    </div>
+                </div>
+
+                <div class="rooms-count flater-box">
+                    <h6 class="rooms-count-text">
+                        Rooms
+                    </h6>
+                    <div class="controle">
+                        <span class="minus">-</span>
+                        <span class="people-count">2</span>
+                        <span class="plus">+</span>
+                    </div>
+                </div>
+
+                <div class="dates flater-box">
+                    <h6 class="date-text">
+                        Dates
+                    </h6>
+                    <h4 class="date">30.12.21 - 07.01.22 <span><img src="./icons/Vector 1.svg" alt="Vector"></span></h4>
+
+                </div>
+
+                <button class="find-tour main-but">Find tour</button>
+
+            </div>
+        </section>
+    </main>
     <script src="./js/main.js"></script>
 </body>
+
 </html>
