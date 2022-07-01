@@ -81,7 +81,7 @@ button {
 
 @keyframes translate-link {
     to {
-        transform: translateX(0);
+        transform: translateX(0) scale(100%);
         opacity: 1;
     }
 }
@@ -326,50 +326,78 @@ main {
             align-content: flex-start;
             gap: 16px;
             position: absolute;
-            top: 70px;
-            left: 100%;
+            top: 50%;
+            left: 50%;
+            margin: -50% -50%;
             min-height: 540px;
             height: calc(100vh - 70px);
             width: 100%;
             padding-top: 32px;
             padding-bottom: 32px;
             background-color: var(--color-white);
-            
+            overflow: hidden;
             transition: .3s;
-
+            border-radius: 50%;
+            transform: scale(0);
+            
+            > *:not(.icon-close) {
+                opacity: 0;
+            }
+            
             .icon-close {
                 width: 100%;
                 display: flex;
                 justify-content: flex-end;
                 margin-bottom: 16px;
             }
-
+            
             .flater-box {
                 border: 1px solid var(--color-interaction);
                 border-radius: 15px;
             }
-
-            .people-count,
-            .rooms-count {
+            
+            .location {
+                transform: translateX(calc(100% + 16px));
+            }
+            
+            .dates {
+                transform: translateX(calc(-100% - 16px));
+            }
+            
+            div.people-count,
+            div.rooms-count {
                 flex-basis: calc(50% - 8px);
             }
-
+            
+            div.people-count {
+                transform: translateX(calc(200% + 16px));
+            }
+            
+            div.rooms-count {
+                transform: translateX(calc(100% + 16px));
+            }
+            
             .dates {
                 h4 {
                     display: flex;
                     justify-content: space-between;
                 }
             }
-
+            
             .find-tour {
                 width: 100%;
                 margin-top: 8px;
                 height: 50px;
                 padding: 0;
+                transform: translateX(calc(100% + 16px));
             }
-
+            
             &[data-show=true] {
                 left: 0;
+                top: 70px;
+                margin: 0;
+                border-radius: 0;
+                transform: scale(100%);
             }
         }
     }
