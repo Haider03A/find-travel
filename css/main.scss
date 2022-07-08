@@ -1,7 +1,7 @@
 :root {
     --color-text: #1A1A1A;
     --color-interaction: #EE685F;
-    --color-accent: #3D97B4;
+    --color-accent: #C0DAE3;
     --color-white: #FFFFFF;
 }
 
@@ -91,7 +91,7 @@ body {
     background-color: #fff;
 }
 
-header {
+header.header-for-page {
     height: 70px;
     width: 100%;
     display: flex;
@@ -232,173 +232,244 @@ main {
         padding-top: 32px;
         padding-bottom: 32px;
 
-        h1 {
-            max-width: 185px;
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--color-text);
-        }
+        header {
+            h1 {
+                max-width: 185px;
+                font-size: 24px;
+                font-weight: bold;
+                color: var(--color-text);
+            }
 
-        p {
-            margin-top: 16px;
-            font-size: 16px;
-            color: var(--color-text);
-            font-weight: 500;
-            max-width: 244px;
-        }
-
-        .flater-box {
-            padding: 15px 20px;
-            flex-basis: 100%;
-            height: 80px;
-
-            h6 {
-                font-size: 14px;
+            p {
+                margin-top: 16px;
+                font-size: 16px;
+                color: var(--color-text);
                 font-weight: 500;
-                color: var(--color-accent);
-            }
-
-            h4,
-            div.controle {
-                font-weight: 500;
-                margin-top: 5px;
-            }
-
-            h4 {
-                cursor: pointer;
-
-                &:hover {
-                    color: var(--color-interaction);
-                }
-            }
-
-            div.controle {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-
-                .minus,
-                .plus {
-                    font-size: 18px;
-                    font-weight: bold;
-                    color: var(--color-interaction);
-                    cursor: pointer;
-                }
-
-                .people-count {
-                    color: var(--color-text);
-                    font-size: 16px;
-                    text-align: center;
-                }
+                max-width: 244px;
             }
         }
 
-        .search {
-            margin-top: 24px;
-            background-color: var(--color-white);
-            display: flex;
-            border-radius: 15px;
-            overflow: hidden;
-
-            .settimg-config-icon {
-                background-color: var(--color-interaction);
-                padding: 16px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                transition: .2s;
-                cursor: pointer;
-
-                &:hover {
-                    background-color: var(--color-accent);
-                }
-
-                img {
-                    width: 40px;
-                    height: 40px;
-                }
-            }
-        }
-
-        .menu-settimg-config {
-            display: flex;
-            flex-flow: row wrap;
-            align-content: flex-start;
-            gap: 16px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin: -50% -50%;
-            min-height: 540px;
-            height: calc(100vh - 70px);
-            width: 100%;
-            padding-top: 32px;
-            padding-bottom: 32px;
-            background-color: var(--color-white);
-            overflow: hidden;
-            transition: .3s;
-            border-radius: 50%;
-            transform: scale(0);
-            
-            > *:not(.icon-close) {
-                opacity: 0;
-            }
-            
-            .icon-close {
-                width: 100%;
-                display: flex;
-                justify-content: flex-end;
-                margin-bottom: 16px;
-            }
-            
+        main {
             .flater-box {
-                border: 1px solid var(--color-interaction);
-                border-radius: 15px;
-            }
-            
-            .location {
-                transform: translateX(calc(100% + 16px));
-            }
-            
-            .dates {
-                transform: translateX(calc(-100% - 16px));
-            }
-            
-            div.people-count,
-            div.rooms-count {
-                flex-basis: calc(50% - 8px);
-            }
-            
-            div.people-count {
-                transform: translateX(calc(200% + 16px));
-            }
-            
-            div.rooms-count {
-                transform: translateX(calc(100% + 16px));
-            }
-            
-            .dates {
+                padding: 15px 20px;
+                flex-basis: 100%;
+                height: 80px;
+
+                h6 {
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: var(--color-accent);
+                }
+
+                h4,
+                div.controle {
+                    font-weight: 500;
+                    margin-top: 5px;
+                }
+
                 h4 {
+                    cursor: pointer;
+
+                    &:hover {
+                        color: var(--color-interaction);
+                    }
+                }
+
+                div.controle {
                     display: flex;
                     justify-content: space-between;
+                    align-items: center;
+
+                    .minus,
+                    .plus {
+                        font-size: 18px;
+                        font-weight: bold;
+                        color: var(--color-interaction);
+                        cursor: pointer;
+                    }
+
+                    .people-count {
+                        color: var(--color-text);
+                        font-size: 16px;
+                        text-align: center;
+                    }
                 }
             }
-            
-            .find-tour {
-                width: 100%;
-                margin-top: 8px;
-                height: 50px;
-                padding: 0;
-                transform: translateX(calc(100% + 16px));
+
+            .search {
+                margin-top: 24px;
+                background-color: var(--color-white);
+                display: flex;
+                border-radius: 15px;
+                overflow: hidden;
+
+                .settimg-config-icon {
+                    background-color: var(--color-interaction);
+                    padding: 16px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: .2s;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: var(--color-accent);
+                    }
+
+                    img {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
             }
-            
-            &[data-show=true] {
-                left: 0;
+
+            .menu-settimg-config {
+                display: flex;
+                flex-flow: row wrap;
+                align-content: flex-start;
+                gap: 16px;
+                position: absolute;
                 top: 70px;
-                margin: 0;
-                border-radius: 0;
-                transform: scale(100%);
+                left: -100%;
+                min-height: 540px;
+                height: calc(100vh - 70px);
+                width: 100%;
+                padding-top: 32px;
+                padding-bottom: 32px;
+                background-color: var(--color-white);
+                overflow: hidden;
+
+                &[data-show=true] {
+                    left: 0;
+                }
+
+                >*:not(.icon-close) {
+                    opacity: 0;
+                }
+
+                .icon-close {
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-bottom: 16px;
+                }
+
+                .flater-box {
+                    border: 1px solid var(--color-interaction);
+                    border-radius: 15px;
+                }
+
+                .location {
+                    transform: translateX(calc(100% + 16px));
+                }
+
+                .dates {
+                    transform: translateX(calc(-100% - 16px));
+                }
+
+                div.people-count,
+                div.rooms-count {
+                    flex-basis: calc(50% - 8px);
+                }
+
+                div.people-count {
+                    transform: translateX(calc(200% + 16px));
+                }
+
+                div.rooms-count {
+                    transform: translateX(calc(100% + 16px));
+                }
+
+                .dates {
+                    h4 {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+
+                .find-tour {
+                    width: 100%;
+                    margin-top: 8px;
+                    height: 50px;
+                    padding: 0;
+                    transform: translateX(calc(100% + 16px));
+                }
+
             }
         }
     }
+
+    .why {
+        padding-top: 46px;
+        padding-bottom: 46px;
+        margin-bottom: 46px;
+        border-color: var(--color-white);
+
+        h2,
+        h3 {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+        
+        p {
+            color: #333333;
+            font-weight: 400;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 48px;
+
+            h2 {
+                margin-bottom: 16px;
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 20px;
+            }
+        }
+
+        main {
+            ul {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 32px;
+
+                li {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    align-items: center;
+                    text-align: center;
+
+                    .icon {
+                        height: 100px;
+                        width: 100px;
+                        border-radius: 50%;
+                        margin-bottom: 20px;
+                        background-color: var(--color-accent);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        img {
+                            width: 50px;
+                            height: 50px;
+                        }
+                    }
+
+                    h3 {
+                        font-size: 20px;
+                        margin-bottom: 10px;
+                    }
+
+                    p {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    
 }
