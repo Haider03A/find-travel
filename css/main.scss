@@ -1,7 +1,7 @@
 :root {
     --color-text: #1A1A1A;
     --color-interaction: #EE685F;
-    --color-accent: #C0DAE3;
+    --color-accent: #3D97B4;
     --color-white: #FFFFFF;
 }
 
@@ -96,7 +96,9 @@ header.header-for-page {
     width: 100%;
     display: flex;
     align-items: center;
-    position: relative;
+    position: fixed;
+    background-color: var(--color-white);
+    z-index: 10000000000000;
 
     nav {
         flex-basis: 100%;
@@ -229,7 +231,7 @@ main {
         background-repeat: no-repeat;
         background-position: 60% center;
         background-size: cover;
-        padding-top: 32px;
+        padding-top: 102px;
         padding-bottom: 32px;
 
         header {
@@ -328,7 +330,7 @@ main {
                 flex-flow: row wrap;
                 align-content: flex-start;
                 gap: 16px;
-                position: absolute;
+                position: fixed;
                 top: 70px;
                 left: -100%;
                 min-height: 540px;
@@ -403,7 +405,7 @@ main {
         padding-top: 46px;
         padding-bottom: 46px;
         margin-bottom: 46px;
-        border-color: var(--color-white);
+        background-color: #F7F7F7;
 
         h2,
         h3 {
@@ -447,7 +449,7 @@ main {
                         width: 100px;
                         border-radius: 50%;
                         margin-bottom: 20px;
-                        background-color: var(--color-accent);
+                        background-color: #C0DAE3;
                         display: flex;
                         justify-content: center;
                         align-items: center;
